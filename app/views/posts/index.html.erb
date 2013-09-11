@@ -2,7 +2,7 @@
 
 
 
-<table  width=400>
+<table  width=600>
   <thead>
     <tr>
       <th>Title</th>
@@ -18,9 +18,10 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
+        <td><%= post.url %></td>
         <td><%= post.description %></td>
-        <td><%= post.user.username %></td>
-        <td><%= link_to 'Show Post', post %></td>
+
+        <td><%= link_to 'Show Post', post_path(post) %> | </td>
         <td><%= link_to 'Edit Post', edit_post_path(post) %></td>
       </tr>
     <% end %>

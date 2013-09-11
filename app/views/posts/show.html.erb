@@ -1,8 +1,6 @@
-<h4>View Post </h4>
+<h4>Viewing Post </h4>
 <P>
-<%= @post.title %>: <%= @post.description %>
+<%= @post.title %>:  <%= @post.description %>
 <p>
-<%= link_to 'All Posts', root_path %>
-
-<p>
-<%= link_to 'Add Comment', @test %>
+<%= link_to 'All Posts', root_path %> | 
+<%= link_to 'Add Comment', new_post_comment_path(params[:id]) %>

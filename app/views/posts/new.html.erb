@@ -1,0 +1,43 @@
+<h3>Create a new post </h3>
+<% if @post.errors.any? %>
+	<% @post.errors.full_messages.each do |msg| %>
+		<%= msg %>
+	<% end %>
+<% end %>
+
+<%= render 'form' %>
+
+
+
+-----------------------------------
+
+<h3>Non-model backed form example</h3>
+
+<%= form_tag '/posts' do %>
+	<%= label_tag :title %>
+	<%= text_field_tag :title %>
+	<br>
+	<%= label_tag :url %>
+	<%= text_field_tag :url %>
+	<br>
+	<%= label_tag :description %>
+	<%= text_field_tag :description %>
+	<br>
+	<%= submit_tag "Create Post" %>
+<% end %>
+
+
+<h3>Model backed form exmaple </h3>
+<%= form_for @post do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	<br>
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	<br>
+	<%= f.submit "Create Post" %>
+
+<% end %>
